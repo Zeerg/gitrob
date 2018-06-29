@@ -16,6 +16,7 @@ type Options struct {
   Silent            *bool
   Debug             *bool
   Logins            []string
+  Serve             *bool
 }
 
 func ParseOptions() (Options, error) {
@@ -30,6 +31,7 @@ func ParseOptions() (Options, error) {
     Port:              flag.Int("port", 9393, "Port to run web server on"),
     Silent:            flag.Bool("silent", false, "Suppress all output except for errors"),
     Debug:             flag.Bool("debug", false, "Print debugging information"),
+    Serve:             flag.Bool("serve", false, "Start the webserver"),
   }
 
   flag.Parse()
